@@ -1,6 +1,7 @@
 ## Karylle G. Cabrido.
 
-### Bachelor of Scince in Information Technology
+### Bachelor of Science in Information Technology
+
 
 ### Contact
 
