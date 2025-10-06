@@ -1,6 +1,6 @@
 
 
-##### Hi, I'm Karylle!
+<h1>##### Hi, I'm Karylle!</h1>
 
 ### Bachelor of Science in Information Technology
 
