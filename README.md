@@ -1,11 +1,6 @@
-# CABI
-
-![Logo](/assets/img/headshot_circle.png)
-
-[View My GitHub Profile](https://github.com/cabI0-o)
 
 
-#### Hi, I'm Karylle!
+##### Hi, I'm Karylle!
 
 ### Bachelor of Science in Information Technology
 
