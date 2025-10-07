@@ -1,8 +1,4 @@
 title: CABI
 logo: assets/img/553902885_1560423304958345_7812086223061169915_n.jpg
 theme: jekyll-theme-minimal
-show_downloads: false
-plugins:
-  - jekyll-seo-tag
-include:
-  - assets/css/style.css
+
