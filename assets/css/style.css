@@ -1,5 +1,7 @@
+img[alt*="logo"], /* targets your logo image */
 img[src*="assets/img/"] {
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 180px;           /* smaller image size */
+  height: 180px;          /* make it perfectly square */
+  border-radius: 50%;     /* makes it circular */
+  object-fit: cover;      /* crops nicely inside the circle */
 }
