@@ -1,8 +1,0 @@
-/* Make only the logo image circular and smaller */
-img[src*="assets/img/"] {
-  width: 220px;          /* adjust image size */
-  height: 220px;
-  border-radius: 50%;    /* makes the image round */
-  object-fit: cover;     /* crop to circle properly */
-  margin-top: 20px;
-}
