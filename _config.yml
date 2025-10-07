@@ -1,15 +1,3 @@
 title: CABI
 logo: assets/img/553902885_1560423304958345_7812086223061169915_n.jpg
-/* Make only the logo image circular and smaller */
-img[src*="assets/img/"] {
-  width: 220px;          /* adjust image size */
-  height: 220px;
-  border-radius: 50%;    /* makes the image round */
-  object-fit: cover;     /* crop to circle properly */
-  margin-top: 20px;
-}
-
 theme: jekyll-theme-minimal
-
-include:
-  - assets/css/style.css
