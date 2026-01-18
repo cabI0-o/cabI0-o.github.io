@@ -1,264 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>cabI0-o.github.io</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cabI0-o.github.io</title>
 
- 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    
-    html {
-      scroll-behavior: smooth;
-    }
+    <style>
+        body {
+            font-family: "Segoe UI", system-ui, sans-serif;
+            background-color: #0f1115;
+            color: #e4e4e4;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 40px;
-      background-color: #121212; 
-      color: #e0dede; 
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-    }
+        .portfolio {
+            max-width: 1100px;
+            width: 100%;
+            background: #161a22;
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
 
-    .container {
-      max-width: 900px;
-      display: flex;
-      gap: 50px;
-      align-items: flex-start;
-      background-color: #1c1c1c; 
-      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15); 
-      border-radius: 20px;
-      padding: 40px 50px;
-      animation: fadeIn 1s ease forwards;
-    }
+        /* Sidebar */
+        .sidebar {
+            text-align: center;
+            border-right: 1px solid #2a2f3a;
+            padding-right: 40px;
+        }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        .sidebar img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #3a3f4b;
+        }
 
-    .left {
-      max-width: 320px;
-      text-align: center;
-      background-color: #242424;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 0 15px #ffffff88; 
-    }
+        .sidebar h2 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
 
-    h2.logo {
-      color: #ffffff;
-      font-weight: 900;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
+        .degree {
+            color: #a5a8b0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
 
-    .photo {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 50%;
-      border: 4px solid #ffffffcc;
-      box-shadow: 0 0 10px #ffffffbb;
-      object-fit: cover;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .github-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 25px;
+            border: 1px solid #4f5566;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #e4e4e4;
+            transition: 0.3s;
+        }
 
-    .photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #ffffffdd;
-    }
+        .github-link:hover {
+            background-color: #4f5566;
+            color: #ffffff;
+        }
 
-    .github-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 30px;
-      font-size: 16px;
-      font-weight: 700;
-      color: #121212; 
-      background: linear-gradient(135deg, #fff, #ededed);
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 6px 15px #ffffff90;
-      transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-      font-family: 'Montserrat', sans-serif;
-    }
+        .sidebar-section {
+            text-align: left;
+            margin-bottom: 30px;
+        }
 
-    .github-button:hover {
-      background: linear-gradient(135deg, #ededed, #fff);
-      box-shadow: 0 10px 25px #ffffffcc;
-      color: #121212;
-    }
+        .sidebar-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #2a2f3a;
+            padding-bottom: 8px;
+        }
 
-    .left.hidden {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .right.hidden {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+        .sidebar-section p {
+            margin-bottom: 10px;
+            color: #cfd2da;
+            font-size: 0.95rem;
+        }
 
-    .left.visible,
-    .right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
+        /* Content */
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
 
-    .right {
-      max-width: 560px;
-    }
+        .content p {
+            color: #cfd2da;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
 
-    .right h1 {
-      font-weight: 900;
-      margin-bottom: 12px;
-      font-size: 2.7rem;
-      color: #ffffff; 
-    }
+        .section-title {
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #2a2f3a;
+            padding-bottom: 10px;
+        }
 
-    .right h3 {
-      font-weight: 700;
-      margin-top: 25px;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-      color: #f5f5f5; 
-      border-left: 6px solid #ffffff;
-      padding-left: 16px;
-    }
+        /* Activity Cards (Services Style) */
+        .activity-card {
+            background: #1d2230;
+            border-radius: 14px;
+            padding: 25px;
+            height: 100%;
+            transition: 0.3s;
+        }
 
-    .right p {
-      line-height: 1.8;
-      margin-bottom: 22px;
-      color: #cfcfce; 
-      font-size: 1.05rem;
-    }
+        .activity-card:hover {
+            background: #2a3144;
+            transform: translateY(-5px);
+        }
 
+        .activity-card h5 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-    @media (max-width: 768px) {
-      body {
-        margin: 20px;
-      }
-      .container {
-        flex-direction: column;
-        padding: 30px 20px;
-      }
-      .left,
-      .right {
-        max-width: 100%;
-      }
-      .left {
-        margin-bottom: 35px;
-      }
-    }
-  </style>
+        .activity-card p {
+            font-size: 0.95rem;
+            color: #bfc3ce;
+        }
+
+        .activity-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ffffff;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                border-right: none;
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="left">
-      <h2 class="logo">CABI</h2>
-      <img
-        src="assets/img/553902885_1560423304958345_7812086223061169915_n.jpg"
-        alt="Profile Photo"
-        class="photo"
-      />
-      <a
-        href="https://github.com/cabl0-o"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="github-button"
-        >View My GitHub Profile</a
-      >
+
+    <div class="portfolio">
+        <div class="row g-5">
+
+            <!-- LEFT SIDEBAR -->
+            <div class="col-md-4 sidebar">
+                <img src="assets/img/553902885_1560423304958345_7812086223061169915_n.jpg" alt="Profile Photo">
+
+                <h2>Karylle</h2>
+                <div class="degree">BS Information Technology</div>
+
+                <a href="https://github.com/cabl0-o" target="_blank" class="github-link">
+                    GitHub Profile
+                </a>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Contact Information</div>
+                    <p><strong>Email</strong><br>cabridokarylle@gmail.com</p>
+                    <p><strong>Phone</strong><br>0995-140-3391</p>
+                    <p><strong>Location</strong><br>Brgy. San Agustin, Alaminos, Laguna</p>
+                </div>
+            </div>
+
+
+            <div class="col-md-8 content">
+
+                <h1>Hello! </h1>
+                <p>
+                    I'm Karylle Cabrido, a Bachelor of Science in Information Technology student with a strong interest
+                    in web development, UI design, and creating clean, functional applications. I am motivated to learn
+                    modern technologies and apply theoretical knowledge to practical projects, with a focus on
+                    usability, efficiency, and continuous skill improvement.
+
+                <div class="section-title">Academic Activities</div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <h5>Activity 4 – Showcase</h5>
+                            <p>Fundamental web layout and structure using HTML and CSS.</p>
+                            <a href="https://github.com/cabI0-o/cabi_act.git" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <h5>Activity 5 – Tourist Spot</h5>
+                            <p>Web design project showcasing a tourist destination.</p>
+                            <a href="https://github.com/cabI0-o/cabi_5.git" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <h5>Activity 6 – Gallery</h5>
+                            <p>Image gallery layout with responsive design.</p>
+                            <a href="https://github.com/cabI0-o/gallery" target="_blank">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="activity-card">
+                            <h5>Activity 7 – Digimon Hub</h5>
+                            <p>Interactive web app using JavaScript and API concepts.</p>
+                            <a href="https://github.com/cabI0-o/digimon_hub.git" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="right">
-      <h1>Hi, I'm Karylle!</h1>
-      <h3>Bachelor of Science in Information Technology</h3>
-      <h3>Contact</h3>
-      <p>Email: cabridokarylle@gmail.com</p>
-      <p>Phone: 0995-145-4499</p>
-      <p>Location: Brgy. San Agustin, Alaminos, Laguna.</p>
-      <h3>Lorem Ipsum</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-      </p>
 
-        <h3>Activities</h3>
-  <ul style="list-style: none; padding-left: 0;">
-    <li>
-      <a href="https://github.com/cabI0-o/cabi_act.git" target="_blank" rel="noopener noreferrer"
-         style="color: #c0c0c0; text-decoration: underline;">
-         Activity_4
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/cabI0-o/cabi_5.git" target="_blank" rel="noopener noreferrer"
-         style="color: #c0c0c0; text-decoration: underline;">
-         Activity_5
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/cabI0-o/gallery" target="_blank" rel="noopener noreferrer"
-         style="color: #c0c0c0; text-decoration: underline;">
-         Activity_6
-      </a>
-      <li>
-       <a href="https://github.com/cabI0-o/digimon_hub.git" target="_blank" rel="noopener noreferrer"
-         style="color: #c0c0c0; text-decoration: underline;">
-         Activity_7
-      </a>
-      </li>
-    </li>
-  </ul>
-      
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-
-      const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(
-        observerCallback,
-        observerOptions
-      );
-
-      document.querySelectorAll('.left, .right').forEach(elem => {
-        elem.classList.add('hidden'); 
-        observer.observe(elem);
-      });
-    });
-
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
